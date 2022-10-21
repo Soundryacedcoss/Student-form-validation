@@ -15,6 +15,7 @@ export default function Studentform() {
   const[mmobno,setMMobno]=useState("")
   const [memail,setmEmail]=useState("")
   const[mocupation,setMocupation]=useState("")
+  const[address,setAddress]=useState("")
 
   const nameHandler=(e)=>{
     setSFname(e.target.value) 
@@ -61,6 +62,9 @@ const memailHandler=(e)=>{
 }
 const mocupationHandler=(e)=>{
     setMocupation(e.target.value)
+}
+const addressHandler=(e)=>{
+  setAddress(e.target.value)
 }
   const clickHandler =(event)=>{
         event.preventDefault();
@@ -168,6 +172,14 @@ const mocupationHandler=(e)=>{
         alert("ocupation should not be integer");
         document.form.mocupation.focus();
       }
+      else if(address===""){
+        alert("address should not empty");
+        document.form.address.focus();
+      }
+      else if(!isNaN(address)){
+        alert("address should not be empty");
+        document.form.address.focus();
+      }
   }
   return (
     <div>
@@ -271,7 +283,7 @@ const mocupationHandler=(e)=>{
             <tr>
               <tr>
                 <td>
-                  <input type="text" name='number' minLength="9" maxLength="10" onChange={numberHandler} />
+                  <input type="text" name='number' minLength="10" maxLength="10" onChange={numberHandler} />
                 </td>
               </tr>
             </tr>
@@ -321,12 +333,14 @@ const mocupationHandler=(e)=>{
             </tr>
             <tr>
               <tr><td>
-                  <input type="text" minLength="9" maxLength="10" name="mnumber" onChange={mnumberHandler} /></td></tr>
+                  <input type="text" minLength="10" maxLength="10" name="mnumber" onChange={mnumberHandler} /></td></tr>
             </tr><tr><tr><td>Email</td></tr></tr>
             <tr><tr><td><input type="text" name='memail' onChange={memailHandler} /></td></tr></tr>
             <tr><tr><td>Mother's Ocupation</td></tr></tr>
             <tr><tr><td><input type="text" name="mocupation" onChange={mocupationHandler}/></td></tr></tr>
-            <button type="submit">Submit</button>
+            <tr><tr><td>Address</td></tr></tr>
+            <tr><tr><td><input type="text" name="address" onChange={addressHandler} minLength={15}/></td></tr></tr>
+          <button type="submit">Submit</button>
           </tbody>
         </table>
       </form>
