@@ -124,6 +124,7 @@ const addressHandler=(e)=>{
        }
         else if(email1===""){
           alert("Plese enter your email");
+          document.form.email.focus();
         }
         else if ((atposition<1 || email1.lastIndexOf(".")<atposition+2 || dotposition+2>=email1.length)) {
           alert("please enter valid email");
@@ -162,7 +163,8 @@ const addressHandler=(e)=>{
           document.form.mnumber.focus();
        }
        else if(memail===""){
-        alert("Plese enter your email");
+        alert("Plese enter mother email");
+        document.form.memail.focus();
       }
       else if ((memail.indexOf("@")<1 || memail.lastIndexOf(".")<memail.indexOf("@")+2 || memail.lastIndexOf(".")+2>=memail.length)) {
         alert("please enter valid email");
@@ -270,7 +272,7 @@ const addressHandler=(e)=>{
               </tr>
             </tr>
             <tr>
-              <tr>Fatder's qualification</tr>
+              <tr>Father's qualification</tr>
             </tr>
             <tr>
               <tr>
@@ -316,7 +318,7 @@ const addressHandler=(e)=>{
                   <input type="text"  name='mfname' onChange={MfnameHandler} placeholder="First" />
                 </td>
                 <td>
-                  <input type="text" name='mlname' onChange={MlnameHandler} placeholder="First" />
+                  <input type="text" name='mlname' onChange={MlnameHandler} placeholder="Last" />
                 </td>
               </tr>
             </tr>
