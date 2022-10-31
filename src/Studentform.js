@@ -168,6 +168,10 @@ const addressHandler=(e)=>{
         alert("please enter valid email");
         document.form.memail.focus();
       }
+      else if(mocupation===""){
+        alert("Mother ocupation should not be empty");
+        document.form.mocupation.focus();
+      }
       else if(!isNaN(mocupation)){
         alert("ocupation should not be integer");
         document.form.mocupation.focus();
