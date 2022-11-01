@@ -91,7 +91,7 @@ const addressHandler=(e)=>{
           alert("Plese enter your date of Birth");
         }
         else if(textarea===""){
-          alert("Please enter your full address");
+          alert("Please enter your sibling details");
           document.form.textarea.focus();
         }
         else if(ffname ===""){
@@ -190,7 +190,7 @@ const addressHandler=(e)=>{
   return (
     <div>
         <center>
-      <form onSubmit={clickHandler} name='form'>
+      <form onSubmit={clickHandler} >
         <table>
           <tbody>
             <tr>
@@ -339,7 +339,7 @@ const addressHandler=(e)=>{
             </tr>
             <tr>
               <tr><td>
-                  <input type="text" minLength="10" maxLength="10" name="mnumber" onChange={mnumberHandler} /></td></tr>
+            <input type="text" minLength="10" maxLength="10" name="mnumber" onChange={mnumberHandler} /></td></tr>
             </tr><tr><tr><td>Email</td></tr></tr>
             <tr><tr><td><input type="text" name='memail' onChange={memailHandler} /></td></tr></tr>
             <tr><tr><td>Mother's Ocupation</td></tr></tr>
